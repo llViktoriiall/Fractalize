@@ -1,0 +1,96 @@
+﻿<Window x:Class="Interface.FractalsMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface"
+        mc:Ignorable="d"
+        Title="FractalsMain" Height="1024" Width="1440">
+    <Window.Resources>
+        <Style x:Key="TransparentStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="1331*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="285*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Height="750" Width="750" Margin="508,129,73,114" Grid.RowSpan="2" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="28" G="35" B="43" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="49" Width="1440" VerticalAlignment="Top" Margin="0,0,-8,0" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="28" G="35" B="43" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="278" Width="268" Margin="139,116,0,461" HorizontalAlignment="Left" Grid.Row="1" RadiusY="50" RadiusX="50" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Width="50" Height="50" VerticalAlignment="Top"  HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click">
+            <Image Source="C:\Users\Viktoriia\source\repos\Fractals\Interface\Resources\IconHome.PNG" Height="50" Width="50"/>
+        </Button>
+        <Image Width="220" Source="C:\Users\Viktoriia\source\repos\Fractals\Interface\Resources\IconPlasma.PNG" Margin="159,136,952,509" Grid.Row="1" Grid.Column="1" />
+        <Rectangle Height="278" Width="268" Margin="139,413,0,164" HorizontalAlignment="Left" Grid.Row="1" RadiusY="50" RadiusX="50" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button VerticalAlignment="Top" Height="30" Width="80" HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click" Margin="1068,138,0,0" Grid.Row="1" Grid.Column="1"/>
+        <Image Source="C:\Users\Viktoriia\source\repos\Fractals\Interface\Resources\IconBrownian.PNG" Margin="139,422,924,225" Grid.Row="1" Grid.Column="1" />
+
+        <Button  Height="30" Width="80" HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click_2" Margin="241,351,0,474" Grid.Row="1" Grid.Column="1">
+            <Button.Content>
+                <TextBlock TextAlignment="Center" FontSize="16" Foreground="White" Style="{StaticResource SecondFont}"  Grid.Row="1" Margin="-14,0,0,-22" ><Run Text="PLASMA"/></TextBlock>
+            </Button.Content>
+        </Button>
+        <Button Height="30" Width="210" HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click_3" Margin="169,646,0,179" Grid.Row="1" Grid.Column="1">
+            <Button.Content  >
+                <TextBlock TextAlignment="Center" Width="210" FontSize="16" Foreground="White" Style="{StaticResource SecondFont}"  Grid.Row="1" Margin="0,0,0,-34"  ><Run Text="BROWNIAN MOVEMENT"/></TextBlock>
+            </Button.Content>
+        </Button>
+
+        <Rectangle Height="650" Width="650" VerticalAlignment="Top" Margin="558,41,123,0" Grid.Row="1" Fill="White" Grid.Column="1"></Rectangle>
+        <Rectangle Height="90" Width="525" VerticalAlignment="Top" Margin="0,86,907,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color= "DarkSlateBlue" Offset="0.0"/>
+                    <GradientStop Color="Coral" Offset="0.9"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock TextAlignment="Center" Foreground="White" FontSize="64" HorizontalAlignment="Center" Style="{StaticResource FirstFont}" Height="75" Width="512" Margin="35,79,784,839" Grid.RowSpan="2" Grid.Column="1" ><Run Text="Fractals"/></TextBlock>
+    </Grid>
+</Window>

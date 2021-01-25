@@ -1,0 +1,149 @@
+﻿<Window x:Class="Interface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1024" Width="1440">
+    <Window.Resources>
+        <Style x:Key="TransparentStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Rectangle Height="49" Width="1440" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color A="255" R="28" G="35" B="43" />
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource FirstFont}" Width="586" Height="170" FontSize="144" Margin="423,0" RenderTransformOrigin="0.536,0.5" ><Run Text="Welcome"/></TextBlock>
+        </StackPanel>
+        <Rectangle Height="79" Width="112" Margin="1060,0,0,337" HorizontalAlignment="Left" Grid.Row="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="28" G="35" B="43" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="79" Width="112" Margin="260,0,0,337" HorizontalAlignment="Left" Grid.Row="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="28" G="35" B="43" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="79"  Margin="322,52,324,284" Grid.Row="1" >
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="28" G="35" B="43" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource FirstFont}" Width="352" Height="100" FontSize="96" Margin="540,35,540,281" RenderTransformOrigin="0.536,0.5" Grid.Row="1" ><Run Text="MENU"/></TextBlock>
+        <Image Height="80" Source="C:\Users\Viktoriia\source\repos\Fractals\Interface\Resources\IconMenu.PNG" Margin="-242,52,242,284" Grid.Row="1"></Image>
+        <!--<Ellipse Width="160"  Height="160" Stroke="White" StrokeThickness="4" Canvas.Left="135" Canvas.Top="100" Margin="406,0,866,12" Grid.Row="1" RenderTransformOrigin="1,0.13" />-->
+        <Rectangle Height="300" Width="300"  HorizontalAlignment="Center" Grid.Row="1" Margin="570,342,562,-225" RadiusY="30" RadiusX="30" >
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="31" G="48" B="68" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="75" Width="300"  HorizontalAlignment="Center" Grid.Row="1" Margin="570,568,562,-227"  >
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Width="175" Height="175" Source="C:\Users\Viktoriia\source\repos\Fractals\Interface\Resources\IconColors.PNG" Margin="630,370,627,-128" Grid.Row="1"></Image>
+
+        <Rectangle Height="300" Width="300"  HorizontalAlignment="Center" Grid.Row="1" Margin="74,337,1058,-216" RadiusY="30" RadiusX="30" Grid.RowSpan="2" >
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="31" G="48" B="68" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="75" Width="300"  HorizontalAlignment="Center" Grid.Row="2" Margin="74,144,1058,-219"  >
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Width="175" Height="175" Source="Resources/IconTriangle.PNG" Margin="135,366,1122,-119" Grid.Row="1" Grid.RowSpan="2"/>
+        <Rectangle Height="300" Width="300"  HorizontalAlignment="Center" Grid.Row="1" Margin="1062,338,70,-214" RadiusY="30" RadiusX="30" Grid.RowSpan="2" >
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="31" G="48" B="68" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="75" Width="300"  HorizontalAlignment="Center" Grid.Row="2" Margin="1062,147,70,-216"  >
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Height="175" Source="Resources/IconFractals.PNG" Margin="1123,368,122,-116" Grid.Row="1" Grid.RowSpan="2"/>
+
+
+        <Button VerticalAlignment="Top" Height="75" Width="300" HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click" Margin="1098,147,0,-213" Grid.Row="2">
+            <Button.Content>
+                <TextBlock TextAlignment="Center" Foreground="White" FontSize="64" HorizontalAlignment="Center" Style="{StaticResource FirstFont}" Height="75" Width="300" Margin="-35,0,35,0" >Fractals</TextBlock>
+            </Button.Content>
+        </Button>
+
+
+        <Button VerticalAlignment="Top" Height="74" Width="300" HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click_Colors" Margin="570,151,0,-214" Grid.Row="2">
+            <Button.Content>
+                <TextBlock TextAlignment="Center"  Foreground="White" FontSize="64" HorizontalAlignment="Center" Style="{StaticResource FirstFont}" Width="300"  RenderTransformOrigin="0.536,0.5" Grid.Row="1" >Colors</TextBlock>
+            </Button.Content>
+        </Button>
+
+        <Button VerticalAlignment="Top" Height="74" Width="300" HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click_Triangle" Margin="74,147,0,-209" Grid.Row="2" >
+            <Button.Content>
+                <TextBlock TextAlignment="Center"  Foreground="White" FontSize="64" HorizontalAlignment="Center" Style="{StaticResource FirstFont}" Width="300"  RenderTransformOrigin="0.536,0.5" Grid.Row="1" >Triangle</TextBlock>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>

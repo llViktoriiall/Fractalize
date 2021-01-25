@@ -1,0 +1,6 @@
+C:\Users\Viktoriia\source\repos\Fractals\Fractals\bin\Debug\Fractals.exe.config
+C:\Users\Viktoriia\source\repos\Fractals\Fractals\bin\Debug\Fractals.exe
+C:\Users\Viktoriia\source\repos\Fractals\Fractals\bin\Debug\Fractals.pdb
+C:\Users\Viktoriia\source\repos\Fractals\Fractals\obj\Debug\Fractals.csprojAssemblyReference.cache
+C:\Users\Viktoriia\source\repos\Fractals\Fractals\obj\Debug\Fractals.exe
+C:\Users\Viktoriia\source\repos\Fractals\Fractals\obj\Debug\Fractals.pdb

@@ -1,0 +1,182 @@
+﻿<Window x:Class="Interface.FractalsBrownian"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface"
+        mc:Ignorable="d"
+        Title="FractalsBrownian" Height="1024" Width="1440">
+    <Window.Resources>
+        <Style x:Key="TransparentStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="337*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="285*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Height="49" Width="1440" VerticalAlignment="Top" Margin="0,0,-8,0" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="28" G="35" B="43" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Width="50" Height="50" VerticalAlignment="Top"  HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click">
+            <Image Source="Resources/IconHome.PNG" Height="50"/>
+        </Button>
+        <Rectangle Height="720" Width="720" VerticalAlignment="Top" Grid.Row="1" Margin="540,10,88,0" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="28" G="35" B="43" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="428" VerticalAlignment="Top" Grid.Row="1" Margin="60,104,890,0" RadiusY="30" RadiusX="30" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="28" G="35" B="43" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Canvas x:Name="canvas2" Height="650" HorizontalAlignment="Stretch" Margin="578,50,120,0" Grid.Row="1" VerticalAlignment="Top" Width="650" Background="White" Grid.Column="1"/>
+        <RadioButton Name="r1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,227,0,0" Grid.Row="1" Checked="RadioButton_Checked" Grid.ColumnSpan="2">
+            <TextBlock FontSize="16" Style="{StaticResource SecondFont}"   Foreground="White" RenderTransformOrigin="0.493,3" ><Run Text="Automatic build"/></TextBlock>
+        </RadioButton>
+        <RadioButton Name="r2" Checked="RadioButton_Checked_Custom" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,261,0,0" Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock FontSize="16"  Style="{StaticResource SecondFont}"   Foreground="White" RenderTransformOrigin="0.493,3" ><Run Text="Custom build"/></TextBlock>
+        </RadioButton>
+        <Rectangle Height="90" VerticalAlignment="Top" Margin="0,86,890,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color= "DarkSlateBlue" Offset="0.0"/>
+                    <GradientStop Color="Coral" Offset="0.9"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock TextAlignment="Center" Foreground="White" FontSize="64" HorizontalAlignment="Center" Style="{StaticResource FirstFont}" Height="75" Width="542" Margin="10,89,880,829" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="Fractals Brownian" />
+        <TextBlock Style="{StaticResource SecondFont}" FontSize="18"  Foreground="White" RenderTransformOrigin="0.493,3" Margin="77,191,971,628" Grid.Row="1" Grid.ColumnSpan="2" ><Run Text="Please, choose the option of generating:"/></TextBlock>
+        <TextBlock Style="{StaticResource SecondFont}" FontSize="18"  Foreground="White" RenderTransformOrigin="0.493,3" Margin="77,118,971,701" Grid.Row="1" Grid.ColumnSpan="2" ><Run Text="Generating seed:"/></TextBlock>
+        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="23" Margin="77,154,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Grid.ColumnSpan="2"/>
+        <Rectangle Width="140" Margin="63,554,0,155" HorizontalAlignment="Left" Grid.Row="1" RadiusY="20" RadiusX="20" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <TextBlock Visibility="Hidden" Name="txt1" Style="{StaticResource SecondFont}" FontSize="18"  Foreground="White" RenderTransformOrigin="0.493,3" Margin="77,285,971,534" Grid.Row="1" Text="Iterations amount:" Grid.ColumnSpan="2" />
+        <TextBlock Visibility="Hidden" x:Name="txt2" Style="{StaticResource SecondFont}" FontSize="18"  Foreground="White" RenderTransformOrigin="0.493,3" Margin="77,347,971,386" Grid.Row="1" Grid.ColumnSpan="2" ><Run Text="Fractal coordinates:"/><LineBreak/><Run Text="x:&#x9;&#x9;y:"/></TextBlock>
+        <TextBox Visibility="Hidden" x:Name="txtBox_Copy" HorizontalAlignment="Left" Height="23" Margin="77,310,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Grid.ColumnSpan="2"/>
+        <TextBox Visibility="Hidden" x:Name="txtBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="16,372,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Grid.Column="1"/>
+        <TextBox Visibility="Hidden" x:Name="txtBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="158,372,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.512,0.435" Grid.Column="1"/>
+        <Button Width="100" Height="100" VerticalAlignment="Top"  HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click_5" Grid.Column="1" Margin="138,26,0,0" Grid.Row="1">
+            <Image Width="100" Height="100" Source="Resources/IconPlasma.PNG" Margin="-138,549,138,-549"/>
+        </Button>
+        <Rectangle Width="120" Margin="294,481,0,336" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button  VerticalAlignment="Top" Height="25" Width="120" HorizontalAlignment="Left" Style="{StaticResource TransparentStyle}" Click="Button_Click_Start" Margin="294,481,0,0" Grid.Row="1" Grid.Column="1">
+            <TextBlock  Foreground="White" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Stretch" Style="{StaticResource SecondFont}" Width="87" Margin="33,5,0,-1" Text="START" />
+        </Button>
+        <Rectangle Width="120" Margin="294,425,0,392" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Click="Button_Click_Clear" Style="{StaticResource TransparentStyle}" Margin="293,425,935,392" Grid.Row="1" Grid.Column="1">
+            <TextBlock Foreground="White" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Stretch" Style="{StaticResource SecondFont}" Width="87" Margin="33,5,0,-1" ><Run Text="CLEAR"/></TextBlock>
+        </Button>
+        <Rectangle Width="120" Margin="293,370,0,447" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Style="{StaticResource TransparentStyle}" Click="Button_Click_Save" Margin="293,370,941,447" Grid.Row="1" Grid.Column="1">
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="16" HorizontalAlignment="Stretch" Style="{StaticResource SecondFont}" Height="38" Margin="0,10,0,-10"  ><Run Text="SAVE"/></TextBlock>
+        </Button>
+
+        <Rectangle Visibility="Hidden" x:Name="rectWarning" Height="144" VerticalAlignment="Top" Grid.Row="1" Margin="138,556,890,0" RadiusY="27.5" RadiusX="27.5" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="28" G="35" B="43" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock TextAlignment="Center" x:Name='warning' Foreground="White" FontSize="16" Style="{StaticResource SecondFont}" Margin="159,574,890,143" Grid.Row="1" Grid.Column="1"></TextBlock>
+
+
+        <Rectangle Width="120" Margin="1141,756,0,61" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Width="120" Margin="544,765,0,52" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush>
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="243" G="103" B="70" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Button Click="Button_Click_1" Style="{StaticResource TransparentStyle}" Grid.Column="1" Margin="544,765,684,52" Grid.Row="1">
+            <Button.Content>
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="16" HorizontalAlignment="Stretch" Style="{StaticResource SecondFont}" Height="28" Margin="0,10,0,0" >BACK</TextBlock>
+            </Button.Content>
+        </Button>
+
+        <Button  Click="Button_Click_2" Style="{StaticResource TransparentStyle}" Grid.Column="1" Margin="1141,762,87,55" Grid.Row="1" >
+            <Button.Content>
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="16" HorizontalAlignment="Stretch" Style="{StaticResource SecondFont}" Height="28">FORWARD</TextBlock>
+            </Button.Content>
+        </Button>
+
+
+
+
+    </Grid>
+</Window>
